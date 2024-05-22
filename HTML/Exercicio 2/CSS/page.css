@@ -1,0 +1,18 @@
+body{
+    background-color: rgb(138, 196, 127);
+    background-image: url(./tiger_1.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.Container{
+    border-color: rgb(221, 32, 32);
+    background-color: rgba(189, 204, 50, 0.712);
+    margin-left: 45%;
+    margin-right: 40%;
+    
+
+
+}
+
+
