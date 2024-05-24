@@ -1,0 +1,34 @@
+body{
+    background-image: url('./');
+   
+}
+h1{
+    margin-left: 42%;
+    color: red;
+}
+ 
+.Container{
+    margin: auto;
+    background-color: rgba(248, 210, 159, 0.349);
+}
+ 
+th{
+    border: 0.1rem black solid;
+}
+td{
+    border: 0.1rem black solid;  
+}
+ 
+.Imagem{
+    max-width: 100px;
+}
+ 
+.Container1_0{
+    margin-top: 3%;
+    text-align: center;
+    font-size: small;
+}
+ 
+.Ronnie{
+    font-size: 1000px;
+}

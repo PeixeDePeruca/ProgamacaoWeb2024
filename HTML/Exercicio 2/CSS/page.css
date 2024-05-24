@@ -1,8 +1,9 @@
 body{
     background-color: rgb(138, 196, 127);
-    background-image: url(./tiger_1.jpg);
+    background-image: url(./gup_pixel.jpg);
     background-size: cover;
     overflow: hidden;
+    background-position: 120%;
 }
 
 .Container{
@@ -12,7 +13,12 @@ body{
     margin-right: 40%;
     
 
-
 }
 
 
+.fundo{
+
+    background-size: 100%
+    
+
+}
