@@ -1,4 +1,5 @@
 #jogo de adivinhação 
+
 import random;
 import os;
 import time;
