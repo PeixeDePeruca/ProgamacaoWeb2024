@@ -1,0 +1,39 @@
+/*commenttttt*/
+.container{
+    color: rgb(243, 17, 17);
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    border: 0.1rem black solid;
+    border-radius: 30px;
+    margin-left: 40%;
+    margin-right: 30%;
+    margin-top: 15%;
+    padding: 5px;
+    text-align: center;
+}
+
+body{
+    background-color: rgb(246, 243, 161);
+    background-image: url(PokeFood2.png);
+}
+
+input{
+    width: 15%;
+    height: 3%;
+}
+
+.buttonclass{
+   margin-left: 1px;
+   
+
+}
+
+
+p {
+    font-size: 35px;
+}
+
+
+
+
