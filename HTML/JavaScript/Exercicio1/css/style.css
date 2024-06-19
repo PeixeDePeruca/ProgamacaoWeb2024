@@ -1,39 +1,65 @@
-/*commenttttt*/
-.container{
-    color: rgb(243, 17, 17);
-    font-family: 'Courier New', Courier, monospace; 
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(209, 209, 170);
+    background-image: url('PokeFood2.png'); /* Adicione esta linha */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    height: 100vh; /* Define a altura da tela toda */
+}
+.h1 {
+    border: solid 1px rgb(233, 250, 159);
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    position: fixed;
+    padding-left: 25px;
+    background-color: rgba(0, 0, 0, 0.199);
+}
+
+.menu {
     font-weight: bold;
-    background-color: rgb(255, 255, 255);
-    border: 0.1rem black solid;
-    border-radius: 30px;
-    margin-left: 40%;
-    margin-right: 30%;
-    margin-top: 15%;
-    padding: 5px;
+    color: rgb(247, 195, 128);
     text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-body{
-    background-color: rgb(246, 243, 161);
-    background-image: url(PokeFood2.png);
+.conteiner {
+    background-color: rgba(255, 250, 240, 0.9);
+    text-align: center;
+    border: solid 1px black;
+    width: 450px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-input{
-    width: 15%;
-    height: 3%;
+.topo {
+    margin-top: 1%;
 }
 
-.buttonclass{
-   margin-left: 1px;
-   
-
+h1 {
+    font-family: 'Georgia', serif;
+    color: #333333;
 }
-
 
 p {
-    font-size: 35px;
+    font-family: 'Arial', sans-serif;
+    color: #666;
+    line-height: 1.6;
 }
 
-
-
-
+.conteiner_2 {
+    background-color: rgba(255, 250, 240, 0.9);
+    text-align: center;
+    border: solid 1px black;
+    width: 450px;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}

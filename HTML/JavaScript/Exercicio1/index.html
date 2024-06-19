@@ -1,33 +1,47 @@
+<!DOCTYPE html>
 <html>
-
+ 
 <head>
-    <title>Exercicio 1</title>
+    <title>Exercicio</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="iconfavorit" href="css/PokeFood2.png">
 </head>
-
-<body>
-
-    <div class="container">
-        <p>Menu</p>
-
-        
-
-        <input type="text" placeholder="Nome">
-
-        <p>Data de Nascimento</p>
-        <input type="date">
-
-        <select>
-            <option value="pizzapeppe">Pizza de Pepperoni</option>
-            <option value="pizzaflango">Pizza de Flango 100% carne de Flango,confia</option>
-        </select>
-        
-        <br>
-        <input class="buttonclass" type="submit" value="Enviar">
-
-
+ 
+<body class="body">
+    <div class="h1">
+        <h2>RESTAURANTE</h2>
     </div>
-
+ 
+    <div class="conteiner" id="conteiner">
+        <p id="fillForm" class="menu">Menu</p>
+ 
+        <p>Nome</p>
+        <input id="i-name" type="text" placeholder="Nome">
+ 
+        <p>Data de nascimento</p>
+        <input id="i-birthDate" type="date">
+        <br>
+        <p>Pedido</p>
+        <select id="i-orders">
+            <option value="macarrao">Macarrão</option>
+            <option value="omelete">Omelete</option>
+        </select>
+        <br>
+        <br>
+        <input class="button" id="i-submit" type="submit" value="Enviar">
+        <br>
+        <br>
+    </div>
+ 
+    <div class="conteiner_2" id="block">
+        <p id="i-name">Olá: </p>
+        <p id="i-valor">O Valor da sua refeição foi:</p>
+ 
+ 
+    </div>
+ 
+    <script src="./script/script.js"></script>
 </body>
-
+ 
 </html>
+ 
