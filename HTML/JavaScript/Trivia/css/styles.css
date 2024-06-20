@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(173, 199, 126);
+    color: blanchedalmond;
+    font-size: 35px;
+    background-image: url('../img/GirlUndPanzer.jpg');
+    background-size: cover;
+}
+
+
+.Fundo{
+    position: cover;
+
+}
