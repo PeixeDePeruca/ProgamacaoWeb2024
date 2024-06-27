@@ -23,8 +23,8 @@ body {
 }
 
 button {
-    width: 30%;
-    height: 10%;
+    width: 80%;
+    height: 15%;
     margin-bottom: 2%;
     border: 1px solid rgba(0, 0, 0, 0.445);
     border-radius: 3px;
@@ -52,10 +52,11 @@ button {
 
 #rules {
     border: 1px solid rgba(0, 0, 0, 0.582);
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 20%;
+    margin-right: 20%;
     background-color: rgb(214, 214, 214);
     cursor: default;
+    height: 8%;
 }
 
 #rules:hover + #rules-container{
