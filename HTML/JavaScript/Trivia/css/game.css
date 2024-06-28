@@ -49,3 +49,10 @@ body {
 }
 
 
+.timer{
+    border: 1px white solid;
+    background-color: white;
+    margin-left: 50%;
+    margin-right: 48%;
+}
+
