@@ -6,7 +6,9 @@ const questions = [
         c: 'Yukari Akiyama',
         d: 'Miho Nishizumi',
         answer: 'a',
-        img: '../images/Alice_boko.gif'
+        img: '../images/Alice_boko.gif',
+        width: '80%',
+        height: '75%'
     },
     {
         question: 'Esse uniforme é de qual escola?',
@@ -24,7 +26,9 @@ const questions = [
         c: 'Alemanha',
         d: 'Japão Imperial',
         answer: 'c',
-        img: '../images/Kuromorimine_beer.png'
+        img: '../images/Kuromorimine_beer.png',
+        width: '65%',
+        height: '59%'
     },
     {
         question: 'Quem é a irmã de Maho Nishizumi?',
@@ -33,7 +37,9 @@ const questions = [
         c: 'Koume Akaboshi',
         d: 'Shiho Nishizumi',
         answer: 'b',
-        img: '../images/Maho.gif'
+        img: '../images/Maho.gif',
+        width: '90%',
+        height: '75%'
     },
     {
         question: 'Esse é o emblema de qual escola?',
@@ -42,7 +48,9 @@ const questions = [
         c: 'Oorai',
         d: 'Jatkosota',
         answer: 'a',
-        img: '../images/Pravda.png'
+        img: '../images/Pravda.png',
+        width: '75%',
+        height: '75%'
     },
     {
         question: 'Essa música é tema de qual escola?',
@@ -60,7 +68,9 @@ const questions = [
         c: 'Churchill',
         d: 'Panzer 3',
         answer: 'b',
-        img: '../images/Tiger_gup.png'
+        img: '../images/Tiger_gup.png',
+        width: '75%',
+        height: '80%'
     }
 ];
 
@@ -83,6 +93,8 @@ function updateInfos() {
     altC.textContent = questions[round - 1].c;
     altD.textContent = questions[round - 1].d;
     questionImage.src = questions[round - 1].img || '';
+    questionImage.style.width = questions[round-1].width;
+    questionImage.style.height = questions[round-1].height;
     roundHTML.textContent = round;
 
     startTimer();
