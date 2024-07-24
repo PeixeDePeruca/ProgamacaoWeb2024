@@ -1,0 +1,28 @@
+/* styles/register.module.css */
+@keyframes wave {
+    0% {
+        color: rgb(114, 51, 177);
+    }
+    25% {
+        color: rgb(206, 73, 139);
+    }
+    50% {
+        color: rgb(42, 185, 113);
+    }
+    75% {
+        color: rgb(78, 76, 182);
+    }
+    100% {
+        color: rgb(201, 199, 83);
+    }
+}
+
+.text {
+    font-size: 180%;
+    color: rgb(99, 64, 133);
+    background-color: rgb(231, 145, 231);
+    padding-left: 43%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(242, 156, 171) 0%, rgb(172, 219, 240) 60%, rgb(255, 255, 255) 100%);
+    animation: wave 5s infinite;
+}

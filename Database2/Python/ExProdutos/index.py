@@ -1,129 +1,92 @@
+import cliente;
 import produto;
+import pedido;
+from indexCliente import customerMenu;
+from indexProduto import productMenu;
 from os import system;
- 
-#variavel
+
+# Variáveis
 inputMenu = int(0);
-subInputMenu = int(0);
- 
-while(True):
+
+while ( True ):
     system('cls');
-    #Opição menu
-   
-    print("Digite [0] para sair.");
-    print("Digite [1] para CRIAR um produto.");
-    print("Digite [2] para SELECIONAR um produto.");
-    print("Digite [3] para LISTAR todos os produtos.");
-    print("Digite [4] para deletar um produto.");
-    print('Digite [5] para Atualizar.');
-   
-    inputMenu = int(input("Digite: "));
-   
-    if(inputMenu < 0 or inputMenu > 3):
-        print("Digite apenas valores que estão no menu");
-   
-    if(inputMenu == 0):
-        print("Encerrando Sistema");
-        break;
-   
-    if(inputMenu == 1):
-        print("Digite os dados solicitados para criar seu produto: ");
+    # Opções do Menu
+    print('Operações na tabela pedidos.');
+    print('Digite 1 para criar.');
+    print('Digite 2 para buscar pelo código.');
+    print('Digite 3 para listar.');
+    print('Digite 4 para deletar.');
+    print('Digite 5 para atualizar.');
+    print('Digite 6 para acessar o CRUD do cliente.');
+    print('Digite 7 para acessar o CRUD do produto.');
+
+
+
+    inputMenu = int(input('Digite: '));
+
+    if ( inputMenu == 1 ):
+        print('\nDigite os dados solicitados para criar um novo pedido: ');
         try:
-            name = input("Nome: ");
-            price = float(input("Preço: "));
-            quantity = int(input("Quantidade: "));
-        
-            response = produto.create(name, price, quantity)
+            code = input('Código: ');
+            value = float(input('Valor: '));
+            quantity = int(input('Quantidade: '));
+            customerCpf = input('CPF: ');
+            productName = input('Produto: ');
+
+            response = pedido.create(code , value , quantity , customerCpf , productName);
         
             print(f'\n{response['message']}');
         except:
             print('Something went wrong');
-       
-    if(inputMenu == 2):
-        print('\nVamos procurar um produto específico.');
+
+    if ( inputMenu == 2 ):
+        print('\nVamos procurar um pedido específico.');
         try:
-            name = input('Nome: ');
+            code = input('Código: ');
+
+            response = pedido.findByCode(code);
         
-            response = produto.findByName(name);
-            
             print(f'\n{response['message']}');
-            
+        
             if ( response['status'] == 200 ):
-                print(f'\nID / NOME / PREÇO / QUANTIDADE');
-                print(f'{response['data'][0]} / {response['data'][1]} / {response['data'][2]} R$ / {response['data'][0]} Un');
-        
+                print(f'\nID / CÓDIGO / VALOR / QUANTIDADE'); 
+                print(f'{response['request'][0]} / {response['request'][1]} / {response['request'][2]} / {response['request'][3]}');
+                print(f'{response['customer'][0]} / {response['customer'][1]} / {response['customer'][2]} / {response['customer'][3]} / {response['customer'][4]}');
+                print(f'{response['product'][0]} / {response['product'][1]} / {response['product'][2]} / {response['product'][3]}');
+
         except:
-            print('Something went wrong')
-          
+            print('Something went wrong');
+
     if ( inputMenu == 3 ):
-        print('\nListagem de produtos.');
-   
-        response = produto.select();
-        
+        print('\nListagem de pedidos.');
+    
+        response = pedido.select();
+    
         if ( response['status'] == 200 ):
             
-            print(f'\nID / NOME / PREÇO / QUANTIDADE');
-            for product in response['data']:
-                print(f'{product[0]} / {product[1]} / {product[2]} R$ / {product[3]} Un ');
-                
+            print(f'\nID / CÓDIGO / VALOR / QUANTIDADE');
+            for request in response['data']:     
+                print(f'{request[0]} / {request[1]} / {request[2]} / {request[3]} / {request[4]} / {request[5]}');
+
         else:
-            print(response['data']);
-            
+            print(response['message']);
+    
     if ( inputMenu == 4 ):
-        print('\nDeletar um produto.');
+        print('\nDeletar um pedido.');
         try:
-            name = input('Nome: ');
-            
-            response = produto.delete(name);
-            
+            code = input('Código: ');
+        
+            response = pedido.delete(code);
+        
             print(f'\n{response['message']}');
 
         except:
             print('Something went wrong');
-            
-    if ( inputMenu == 5 ):
-        print('\nMenu de atualização do produto.');
-        print('Digite 1 para atualizar o nome');
-        print('Digite 2 para atualizar o preço');
-        print('Digite 3 para atualizar a quantidade');
- 
-        
-        
-        try:
-            subInputMenu = int(input('Digite: '));
-            
-            name = input('Nome: ');
-            
-            productByName = produto.findByName(name);
-            
-            if ( productByName['status'] == 200 ):
-                print(f'{productByName['data'][0]} | {productByName['data'][1]} | {productByName['data'][2]} R$ | {productByName['data'][3]} Un');
-                
-                if ( subInputMenu == 1 ):
-                    print('\nAtualizando o nome do produto.');
-                    newName = input('Novo Nome: ');
-                    
-                    response = produto.update('name' , name , newName);
-                    
-                    print(f'\n{response['message']}');
-                   
-                if ( subInputMenu == 2 ):
-                    print('\nAtualizando o preço do produto.');
-                    newPrice = float(input('Preço: '));
-                    
-                    response = produto.updatePrice(name, newPrice);
-                    
-                    print(f'\n{response['message']}');
-            
-                if ( subInputMenu == 3 ):
-                    print('\nAtualizando a quantidade do produto.');
-                    newQuantity = int(input('Quantidade: '));
-                    
-                    response = produto.update('quantity' , name , newQuantity) 
-                    
-                    print(f'\n{response['message']}');    
-                
-        except:
-            print('Something went wrong');     
     
+    if ( inputMenu == 6 ):
+        customerMenu();
+    
+    if ( inputMenu == 7 ):
+        productMenu();
+
     input('\nAperte ENTER para continuar');
-    
