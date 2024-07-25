@@ -3,26 +3,74 @@
     0% {
         color: rgb(114, 51, 177);
     }
-    25% {
-        color: rgb(206, 73, 139);
+    20% {
+        color: rgb(73, 93, 206);
     }
-    50% {
-        color: rgb(42, 185, 113);
+    40% {
+        color: rgb(42, 180, 185);
     }
-    75% {
-        color: rgb(78, 76, 182);
+    60% {
+        color: rgb(135, 211, 90);
     }
+    80% {
+        color: rgb(247, 183, 45);
+    }    
     100% {
-        color: rgb(201, 199, 83);
-    }
+        color: rgb(114, 51, 177);
+
+
+        }    
+
+
+    
+}
+
+.background{
+    background-color: rgb(72, 79, 81);
+    background-image: url(eeves.jpg);
+    height: 100vh;
+    background-size: cover;
+    
 }
 
 .text {
     font-size: 180%;
     color: rgb(99, 64, 133);
     background-color: rgb(231, 145, 231);
-    padding-left: 43%;
+    padding-left: 20px;
+    text-align: center;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgb(242, 156, 171) 0%, rgb(172, 219, 240) 60%, rgb(255, 255, 255) 100%);
+    background: linear-gradient(90deg, rgb(242, 156, 171) 35%, rgb(172, 219, 240) 44%, rgb(255, 255, 255) 100%);
     animation: wave 5s infinite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.container{
+
+    background-color: rgb(117, 187, 102, 0.89);
+    border: solid 1px transparent;
+    padding: 2%;
+    margin-left: 750px;
+    margin-right: 750px;
+    text-align: center;
+    margin-top: 10%;
+    border-radius: 6px;
+    box-shadow: 2px 3px 4px 5px rgba(0, 0, 0, 0.87);
+
+   
+
+}
+
+
+.input{
+    font-size: 150%;
+    background-color: rgb(240, 214, 185);
+    border:1px black solid;
+    width: 100%;
+
+    
+    
+    
+    
+}
+
