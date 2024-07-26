@@ -25,9 +25,9 @@
     
 }
 
-.background{
+#background{
     background-color: rgb(72, 79, 81);
-    background-image: url(eeves.jpg);
+    background-image: url('/eeves.jpg');
     height: 100vh;
     background-size: cover;
     
@@ -70,7 +70,19 @@
 
     
     
-    
-    
 }
 
+
+.CreateBtn{
+    color: yellow;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.LoginBtn{
+    color: aqua;
+    /*background-color: rgb(0, 0, 255);*/
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+}
