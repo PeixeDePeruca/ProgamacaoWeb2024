@@ -1,4 +1,5 @@
-import { createUser , findUserByEmail, findUserByUsername } from '../model/user';
+import { createUser , findUserByEmail, findUserByUsername, findUserLogin } from '../model/user';
+import { generateToken } from '@/services/tokenConfig';
  
 export async function createUserController(_name:string, _email:string , _username:string , _password:string, _cPassword:string) {
     try{
@@ -31,3 +32,20 @@ export async function createUserController(_name:string, _email:string , _userna
         return { status: 500, message: 'Something went wrong' };
     }
 }
+
+
+export async function login(_email: string, _password: string) {
+    try {
+      const userLogin = await findUserLogin(_email, _password);
+  
+      if (userLogin == undefined) {
+        return { status: 404, message: 'Incorrect Email or Password' };
+      } else {
+        const _token = generateToken(_email);
+        return { status: 200, message: 'Logged In', token: _token };
+      }
+    } catch (err) {
+      return { status: 500, message: 'Something went wrong' };
+    }
+  }
+  
