@@ -3,9 +3,11 @@ import Head from "next/head";
 import styles from '@/styles/register.module.css';
 import { useState } from "react";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 
 export default function Register() {
+
+    const router = useRouter();
 
     const [ formData , setFormData ] = useState({
         
@@ -41,6 +43,10 @@ export default function Register() {
             const respondeJson = await response.json();
 
             alert(`${response.status} \n ${respondeJson}`);
+
+            if ( response.status == 201 ) {
+                router.push(`/user/login`);
+;            }
 
         }
         catch (err) {

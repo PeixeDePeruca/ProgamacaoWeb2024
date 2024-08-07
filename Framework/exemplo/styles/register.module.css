@@ -64,14 +64,21 @@
 
 .input{
     font-size: 150%;
-    background-color: rgb(240, 214, 185);
     border:1px black solid;
     width: 100%;
-
-    
-    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: burlywood;   
+   
 }
 
+.input:hover{
+    background-color: burlywood;
+}
+
+.input::placeholder{
+    color: rgb(0, 0, 0);
+    background-color: burlywood;
+}
 
 .CreateBtn{
     color: yellow;
