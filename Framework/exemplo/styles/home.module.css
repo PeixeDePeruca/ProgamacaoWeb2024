@@ -1,7 +1,8 @@
+/*up*/
 .navBar {
     width: 100vw;
-    height: 16vh;
-    background-color: rgb(246,173,58,255);
+    height: 13vh;
+    background-color: rgb(246,173,58,255); /*yellow*/
     border-bottom: 1px solid rgba(198, 59, 59, 0.63);
     /*background-image: url(../public/eevolution.png);*/
   }
@@ -23,7 +24,7 @@
   }
   
   .leftContainer {
-    background-color: rgb(153, 223, 153);
+    background-color: white;
     height: 100%;
     width: 100%;
     border-right: 1px solid rgba(0, 0, 0, 0.527);
@@ -38,8 +39,16 @@
 
   .leftText{
     background-color: rgb(240,64,55,255);
-    color: rgb(246,219,43,255);
+    color: white;
     padding-left: 5%;
     font-size: 22px;
-  }
+    
+}
+    
+.leftText2{
+  background-color: rgb(240,64,55,255);
+  color: rgb(246,219,43,255);  
+  font-size: 22px;
+  text-decoration: underline;
+}
   

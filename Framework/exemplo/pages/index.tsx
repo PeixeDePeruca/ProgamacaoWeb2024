@@ -19,7 +19,7 @@ export default function Home() {
         <div className={styles.leftContainer}>
         {/*<img src="/Haunter.png" alt="" />*/}
         <img src="/Cynthia_totosa.png" alt="" />
-        <h1 className={styles.leftText}>TREINADORAS POKEMON SOLTEIRAS PERTO DE SUA ÁREA ➡️CLIQUE AQUI E CONFIRA!⬅️</h1>
+        <h1 className={styles.leftText}>TREINADORAS POKEMON SOLTEIRAS PERTO DE SUA ÁREA ➡️<a href="https://i.imgur.com/QRahrvn.jpeg" target="_blank" rel="noopener noreferrer"><span className={styles.leftText2}> CLIQUE AQUI E CONFIRA! </span></a>⬅️</h1>
 
         </div>
 
