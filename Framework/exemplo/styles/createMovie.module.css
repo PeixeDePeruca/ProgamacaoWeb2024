@@ -1,0 +1,43 @@
+.mainContainer{
+    
+    background-image: url(../public/eevolution.png);
+    background-size: cover;
+
+}
+
+
+.formContainer{
+    font-size: 25px;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    /*border: solid 10px;*/
+    border-radius: 18px;
+    height: 60vh;
+    margin-top: 12%;
+    
+}
+
+
+.Menu{
+    background-color: aliceblue;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 4vh;
+    width: 32vw;
+    font-size: 22px;
+
+}
+
+
+/*.Menu::-webkit-file-upload-button {
+    margin-right: 10%;
+}*/
+
+
+.SendBtn{
+    color: rgb(158, 240, 27);
+    background-color: rgb(63, 57, 44);
+    height: 6%;
+}
