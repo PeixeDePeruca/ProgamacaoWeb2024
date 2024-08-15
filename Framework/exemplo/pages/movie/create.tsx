@@ -1,10 +1,19 @@
-
-
-
 import Head from "next/head";
 import styles from "@/styles/createMovie.module.css";
+import { useState } from "react";
 
 export default function createMovie() {
+
+    const [ formData , setFormData ] = useState(
+        {
+            name: '',
+            releaseDate: '',
+            imageURL: '',
+            videoURL: '',
+            description: ''
+        }
+    );
+
     return (
         <main className={`flex min-h-screen flex-col ${styles.mainContainer}`}>
             <Head>

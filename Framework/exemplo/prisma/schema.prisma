@@ -29,6 +29,9 @@ model movie {
   releaseDate String
   imageURL    String?
   description String?
+  videoURL    String?
+
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt
+
 }
