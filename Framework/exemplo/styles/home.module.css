@@ -1,8 +1,8 @@
-/*up*/
+/*top bar*/
 .navBar {
     width: 100vw;
     height: 13vh;
-    background-color: rgb(246,173,58,255); /*yellow*/
+    background-color: rgb(246,173,58,255); /*yellow top bar*/
     border-bottom: 1px solid rgba(198, 59, 59, 0.63);
     /*background-image: url(../public/eevolution.png);*/
   }
@@ -12,7 +12,7 @@
     width: 100%;
     text-align: center;
     color: black;
-    position: fixed;
+    
 
 }
 
@@ -31,10 +31,14 @@
     
   }
   
+  /*centro da página*/
   .rightContainer {
     background-color: rebeccapurple;
     height: 100%;
     width: 100%;
+    background-image: url(../public/PokeBall.jpg);
+    
+    /*background-size: cover;*/
   }
 
   .leftText{
