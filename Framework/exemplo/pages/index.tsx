@@ -4,7 +4,7 @@ import styles from "@/styles/home.module.css";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main id={styles.mainContainer} className="flex min-h-screen flex-col">
       {/* Barra superior de navegação */}
       <nav className={styles.navBar}>
 

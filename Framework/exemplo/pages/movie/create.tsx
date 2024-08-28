@@ -1,8 +1,12 @@
 import Head from "next/head";
 import styles from "@/styles/createMovie.module.css";
 import { useState } from "react";
+import { release } from "os";
 
 export default function createMovie() {
+
+    const [imageUpload , setImageUpload] = useState(undefined);
+
     const [formData, setFormData] = useState({
         name: '',
         releaseDate: '',
@@ -10,6 +14,12 @@ export default function createMovie() {
         videoURL: '',
         description: ''
     });
+
+
+    function handleImageEdit(event:any) {
+        setImageUpload(event.target.files[0]);
+    }
+
 
     function handleFormEdit(event: any, field: string) {
         setFormData({
@@ -19,14 +29,63 @@ export default function createMovie() {
     }
 
 
-    async function formSubmit(event: any) {
+    async function formSubmit(event: any){
+        event.preventDefault();
+
+        if ( imageUpload == undefined ) {
+            movieSubmit(event);
+            return;
+        }
+
+        try {
+            const img = new FormData();
+            img.append("image" , imageUpload);
+
+            const response = await fetch(`/api/action/movie/createImage`, {
+                method: 'POST',
+                body: img
+            });
+
+            const responseJson = await response.json();
+
+            if (response.status != 200 ) {
+                alert(responseJson.message);
+            }
+            else {
+                //criar o filme
+                setFormData({
+                    ...formData,
+                    imageURL: responseJson.secure_url
+            })
+
+            movieSubmit(event);
+        }
+
+        }
+        catch (err) {
+            alert(err);
+        }
+    }
+
+
+
+
+    async function movieSubmit(event: any , img = "") {
         /*event.preventDefault();*/
         try {
             const response = await fetch(`/api/action/movie/create`, {
                 method: 'POST',
                 headers: { 'Content-type': 'application/json' },
-                body: JSON.stringify(formData)
-            });
+                body: JSON.stringify({
+                    name: formData.name,
+                    releaseDate: formData.releaseDate,
+                    description: formData.description,
+                    videoURL: formData.description,
+                    imageURL: img
+                })
+                
+            }
+        );
 
             const responseJson = await response.json();
 
@@ -59,7 +118,7 @@ export default function createMovie() {
                     <input className={styles.Menu} type="date" onChange={(event) => { handleFormEdit(event, 'releaseDate') }} />
 
                     <p>Imagem do filme</p>
-                    <input className={styles.Menu} type="file" accept=".png, .jpg, .jpeg, .jfif" />
+                    <input className={styles.Menu} type="file" accept=".png, .jpg, .jpeg, .jfif" onChange={handleImageEdit} />
 
                     <br /><input className={styles.Menu} type="text" placeholder="Link para o trailer do filme (Youtube)" onChange={(event) => { handleFormEdit(event, 'videoURL') }} />
 
