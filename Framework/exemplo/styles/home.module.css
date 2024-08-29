@@ -61,3 +61,63 @@
   text-decoration: underline;
 }
   
+.card {
+  width: 90%;
+  height: 38vh;
+  background-color: rgba(56, 58, 61, 0.527);
+  border: 1px solid black;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding: 1%;
+  margin-top: 1.5%;
+  margin-left: 1%;
+}
+
+.card:hover {
+  width: 90%;
+  height: 38vh;
+  background-color: rgba(114, 124, 138, 0.527);
+  border: 1px solid black;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding: 1%;
+  margin-top: 1.5%;
+  margin-left: 1%;
+}
+
+
+.cardImg {
+  max-width: 100%;
+  max-height: 34vh;
+}
+
+.cardInfos {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cardInfos h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.createMovie{
+  font-size: 20px;
+  color: white;
+  border: 1px black solid;
+  padding: 0.4%;
+  border-radius: 6px;
+  background-color: rgb(88, 88, 235);
+}
+
+.logoutBtn {
+  border: 1px solid black;
+  color: white;
+  font-size: 20px;
+  padding: 0.4%;
+  background-color: rgb(88, 88, 235);
+  border-radius: 8px;
+  margin-top: -10%;
+}
