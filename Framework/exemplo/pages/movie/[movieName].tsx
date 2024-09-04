@@ -45,8 +45,11 @@ export default function movie({ movieName }: any) {
                 <iframe className={styles.video} height="800" src={"https://www.youtube.com/embed/"+data.videoURL}>
                 </iframe>
  
-                <div className="Avaliações">
- 
+                <div className={styles.formRating}>
+                    <h2>Digite uma nota (0 a 5)</h2>
+                    <input className={styles.value} type="number" /> <br />
+                    <textarea className={styles.comment} placeholder='Digite seu Comentário' id=""></textarea> <br />
+                    <input className={styles.submitBtn} type="submit" />
                 </div>
             </div>
 

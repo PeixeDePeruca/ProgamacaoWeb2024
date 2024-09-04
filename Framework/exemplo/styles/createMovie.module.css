@@ -41,3 +41,39 @@
     background-color: rgb(63, 57, 44);
     height: 6%;
 }
+
+.formRating {
+    border: 1px solid white;
+    padding: 1%;
+    margin-bottom: 10%;
+    border-radius: 6px;
+}
+ 
+.value{
+    background-color: rgba(255, 255, 255, 0.452);
+    color: white;
+    border-radius: 6px;
+    width: 20%;
+    padding-left: 1%;
+    height: 5%;
+}
+ 
+.comment {
+    margin-top: 1%;
+    background-color: rgba(255, 255, 255, 0.452);
+    color: white;
+    border-radius: 6px;
+    width: 40%;
+    padding: 1%;
+    resize: none;
+}
+ 
+.formRating h2 {
+    color: white;
+    padding: 1%;
+}
+
+.submitBtn:hover{
+    background-color: cadetblue;
+    color: rgb(116, 150, 151);
+}
