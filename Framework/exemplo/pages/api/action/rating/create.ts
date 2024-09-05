@@ -16,5 +16,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     // Enviar para o controller
     const response = await createRating(value, email, movieName, comment);
 
-    return res.status(response.status).json(response.message);
+    return res.status(response.status).json({message: response.message});
 };
