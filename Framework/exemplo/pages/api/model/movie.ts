@@ -19,6 +19,14 @@ export async function findMovieByName(_name: string) {
         where: {
             name: _name,
         },
+        include: {
+            ratings: {
+                include: {
+                    user: true
+
+                }
+            }
+        }
     });
 
     return movie;

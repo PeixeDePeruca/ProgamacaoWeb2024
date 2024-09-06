@@ -2,10 +2,11 @@ import styles from '@/styles/movie.module.css'
 import { useState, useEffect } from 'react';
 import { checkToken } from '@/services/tokenConfig';
 import { getCookie } from 'cookies-next';
-
+import { useRouter } from 'next/router';
 
 
 export default function movie({ movieName }: any) {
+    const router = useRouter();
 
     //Formulário de avaliação 
 
@@ -51,6 +52,7 @@ export default function movie({ movieName }: any) {
             const responseJson = await response.json();
 
             alert(responseJson.message);
+            router.reload();
 
 
 
@@ -116,7 +118,7 @@ export default function movie({ movieName }: any) {
                         <iframe className={styles.video} height="800" src={"https://www.youtube.com/embed/" + data.videoURL}>
                         </iframe>
 
-                        <form className={styles.formRating} onChange={formSubmit}>
+                        <form className={styles.formRating} onSubmit={formSubmit}>
                             <h2>Digite uma nota (0 a 5)</h2>
                             <input onChange={(e) => { handleFormEdit(e, 'value') }} className={styles.value} type="number" /> <br />
                             <textarea onChange={(e) => { handleFormEdit(e, 'comment') }} className={styles.comment} placeholder='Digite seu Comentário' id=""></textarea> <br />
@@ -124,21 +126,23 @@ export default function movie({ movieName }: any) {
                         </form>
 
                         <div className={styles.ratings}>
-                            <div className={styles.ratingsCard}>
-                                <h2 className={styles.rValue}>4/5 Recomendação</h2>
-                                <label className={styles.rUser}>[] User 1</label><br />
-                                <label className={styles.rComment}>Comentário do User 1</label>
-                            </div>
 
-                            <div className={styles.ratings}>
-                                <div className={styles.ratingsCard}>
-                                    <h2 className={styles.rValue}>4/5 Recomendação</h2>
-                                    <label className={styles.rUser}>[] User 1</label><br />
-                                    <label className={styles.rComment}>Comentário do User 1</label>
-                                </div>
-                            </div>
+                            {
+
+                                data.ratings.map((rating: any) => (
+                                    <div className={styles.ratingsCard}>
+                                        <div className={styles.rInfos}>
+                                            <label className={styles.rUser}>{rating.user.username}</label>
+                                            <label className={styles.rValue}>{rating.value} /5 Recomendação</label><br />
+                                        </div>
+                                        <div className={styles.rComment}>
+                                            <label>{rating.comment}</label>
+                                        </div>
+                                    </div>
+                                ))
 
 
+                            }
 
                         </div>
                     </div>
