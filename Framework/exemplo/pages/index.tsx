@@ -9,13 +9,50 @@ export default function Home() {
   const router = useRouter();
   const [data, setData] = useState<any>(undefined);
 
+  // Constante para salvar todos os filmes
+  const [saveData, setSaveData]: Array<any> = useState(undefined);
+
+  // Constante para salvar o texto da barra de pesquisa
+  const [name, setName] = useState('');
+
+
+  function searchFilter(array: any, text: string) {
+    if (text == '') {
+      return array;
+    }
+    else {
+      return array.filter((singleMovie: any) => singleMovie.name.toLoweCase().includes(text.toLowerCase()));
+    }
+  }
+
+
+
+  function formSubmit(event: any) {
+    event.preventDefaut();
+    try {
+
+      const filteredMovies = searchFilter(saveData, name);
+
+      setData(filteredMovies);
+
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+
+
+
   async function fetchData() {
     try {
       const response = await fetch('/api/action/movie/select', {
         method: 'GET'
       });
       const responseJson = await response.json();
+
+
       setData(responseJson.data);
+      setSaveData(responseJson.data);
     } catch (err) {
       console.log(err);
     }
@@ -34,13 +71,25 @@ export default function Home() {
     router.push(`/movie/` + movieName);
   }
 
+  function iconClick() {
+    router.push(`/`);
+    router.reload();
+  }
+
+
   return (
     <main id={styles.mainContainer} className="flex min-h-screen flex-col">
       {/* Barra superior de navegação */}
       <nav className={styles.navBar}>
         <h1 className={styles.Header}>Olá Treinador, Bem vindo ao site aí :D </h1>
 
-        <Link href={`/movie/create`} className= {styles.createMovie}>Criar Filme</Link>
+        <form className={styles.searchContainer}  onSubmit={formSubmit}>
+          <input type="text" className={styles.searchBar} onChange={(e) => { setName(e.target.value) }} />
+          <button className={styles.send}>Enviar</button>
+        </form>
+
+
+        <Link href={`/movie/create`} className={styles.createMovie}>Criar Filme</Link>
         <button className={styles.logoutBtn} onClick={logOut}>Logout</button>
       </nav>
 

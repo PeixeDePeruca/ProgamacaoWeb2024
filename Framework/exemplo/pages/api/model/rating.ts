@@ -46,3 +46,14 @@ export async function updateRatingModel(_id:number , _value:number , _comment:st
  
     return rating;
 }
+
+export async function deleteRatingModel(_id:number) {
+    const rating = await prisma.rating.delete({
+        where: {
+            id: _id
+        }
+    });
+    
+    return rating
+}
+
