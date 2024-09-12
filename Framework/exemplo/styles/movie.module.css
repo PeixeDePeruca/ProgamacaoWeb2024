@@ -160,3 +160,35 @@
 .rUser{
     color: white;
 }
+
+
+.radio_hide {
+    position: fixed;
+    opacity: 0;
+}
+ 
+.radio_star {
+    cursor: pointer;
+    color: rgb(255, 255, 255, 0.52)
+}
+ 
+.radio_star::before {
+    content: '★';
+    display: inline-block;
+    font-size: 30px;
+}
+
+.radio_star:hover ,
+.radio_star:hover~.radio_star{
+    color: goldenrod;
+}
+
+.radio_hide:checked~.radio_star {
+    color: gold;
+}
+
+.star_rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}

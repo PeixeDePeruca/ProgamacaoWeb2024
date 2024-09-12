@@ -4,7 +4,7 @@
     height: 13vh;
     background-color: rgb(246,173,58,255); /*yellow top bar*/
     border-bottom: 1px solid rgba(198, 59, 59, 0.63);
-    /*background-image: url(../public/eevolution.png);*/
+    /*background-image: url(../public/eevolution.png);*/ 
   }
   
 .Header{
@@ -12,10 +12,7 @@
     width: 100%;
     text-align: center;
     color: black;
-    
-
 }
-
 
 
   .mainContainer {
@@ -23,6 +20,7 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 25% 75%;
+    overflow: hidden;
   }
   
   .leftContainer {
@@ -39,7 +37,7 @@
     height: 100%;
     width: 100%;
     background-image: url(../public/PokeBall.jpg);
-    
+   
     /*background-size: cover;*/
   }
 

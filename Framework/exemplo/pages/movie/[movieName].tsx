@@ -1,5 +1,5 @@
 import { checkToken } from '@/services/tokenConfig';
-import styles from '@/styles/MovieName.module.css'
+import styles from '@/styles/movie.module.css'
 import { getCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 import { comment } from 'postcss';
@@ -78,6 +78,28 @@ export default function movie({ movieName }: any) {
         fetchData();
     }, [])
 
+    async function deleteComment(event: any) {
+        event.preventDefault();
+        try {
+          const cookieAuth = getCookie('authorization');
+          const tokenInfos = checkToken(cookieAuth);
+      
+          const response = await fetch(`/api/action/rating/delete`, {
+            method: 'DELETE',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({
+              email: tokenInfos.email,
+              moviename: movieName
+            })
+          });
+      
+        } catch (err) {
+          console.log(err);
+        }
+      }
+      
+
+
     return (
         <main id={styles.main} className="flex min-h-screen flex-col">
             {
@@ -90,7 +112,7 @@ export default function movie({ movieName }: any) {
                                 <h2>{data.name}</h2>
                                 <p>{data.relaseDate}</p>
                                 <p>{data.description}</p>
-                                <p>Generos: TALES</p>
+                                <p>Gênero: TALES</p>
                             </div>
                         </div>
 
@@ -98,8 +120,38 @@ export default function movie({ movieName }: any) {
                         </iframe>
 
                         <form className={styles.formRating} onSubmit={formSubmit}>
-                            <h2>Digite uma nota (0 a 5)</h2>
-                            <input onChange={(e) => { handleFormEdit(e, 'value') }} className={styles.value} type="number" /><br />
+
+                            <div className={styles.star_rating}>
+
+                                <input className={styles.radio_hide} type="radio" id='star_5' name='stars' value='5' onChange={(e) => { handleFormEdit(e, 'value') }} />
+                                <label className={styles.radio_star} htmlFor='star_5' ></label>
+
+
+                                <input className={styles.radio_hide} type="radio" id='star_4' name='stars' value='4' onChange={(e) => { handleFormEdit(e, 'value') }} />
+                                <label className={styles.radio_star} htmlFor='star_4' ></label>
+
+
+                                <input className={styles.radio_hide} type="radio" id='star_3' name='stars' value='3' onChange={(e) => { handleFormEdit(e, 'value') }} />
+                                <label className={styles.radio_star} htmlFor='star_3' ></label>
+
+
+                                <input className={styles.radio_hide} type="radio" id='star_2' name='stars' value='2' onChange={(e) => { handleFormEdit(e, 'value') }} />
+                                <label className={styles.radio_star} htmlFor='star_2' ></label>
+
+
+                                <input className={styles.radio_hide} type="radio" id='star_1' name='stars' value='5' onChange={(e) => { handleFormEdit(e, 'value') }} />
+                                <label className={styles.radio_star} htmlFor='star_1' ></label>
+
+
+                                {/*
+                                <input type="radio" name='stars' value='2' onChange={(e) => {handleFormEdit(e , 'value')}} />
+                                <input type="radio" name='stars' value='3' onChange={(e) => {handleFormEdit(e , 'value')}} />
+                                <input type="radio" name='stars' value='4' onChange={(e) => {handleFormEdit(e , 'value')}} />
+                                <input type="radio" name='stars' value='5' onChange={(e) => {handleFormEdit(e , 'value')}} /> */}
+                            </div>
+
+
+
                             <textarea onChange={(e) => { handleFormEdit(e, 'comment') }} className={styles.comment} placeholder='Digite seu Comentário'></textarea>
                             <input className={styles.submitBtn} type="submit" />
 
